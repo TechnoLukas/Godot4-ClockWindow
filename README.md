@@ -5,4 +5,9 @@
 - Godot time module
 - Random ganerated theme from color acid pallet
 
+## TODO
+- close button
+- time zone selection
+- alarm button
+
 font: https://www.keshikan.net/fonts-e.html
