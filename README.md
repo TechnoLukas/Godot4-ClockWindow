@@ -4,3 +4,5 @@
 
 - Godot time module
 - Random ganerated theme from color acid pallet
+
+font: https://www.keshikan.net/fonts-e.html
