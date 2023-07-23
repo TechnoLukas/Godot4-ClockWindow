@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3q3m3c4yc1og"]
+
+[ext_resource type="FontFile" uid="uid://cws6mgocyqqia" path="res://DSEG7Classic-Bold.ttf" id="1_nvjwr"]
+[ext_resource type="Script" path="res://main.gd" id="1_pgb8q"]
+[ext_resource type="FontFile" uid="uid://bmk1lb331na6w" path="res://DSEG14Classic-Bold.ttf" id="3_v8prx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfkto"]
+bg_color = Color(0, 0.207843, 0.0313726, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.219608, 0.811765, 0.176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6qte"]
+bg_color = Color(0.631373, 1, 0.643137, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.219608, 0.811765, 0.176471, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxclg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kt66w"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 1)
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(600, 300)
+borderless = true
+always_on_top = true
+script = ExtResource("1_pgb8q")
+
+[node name="panel_bg" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfkto")
+
+[node name="panel_ov" type="Panel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6qte")
+
+[node name="hide" type="Label" parent="Window"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -158.0
+offset_right = 530.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.631373, 0.996078, 0.592157, 1)
+theme_override_fonts/font = ExtResource("1_nvjwr")
+theme_override_font_sizes/font_size = 120
+text = "06:39"
+
+[node name="time_d" type="Label" parent="Window"]
+anchors_preset = -1
+offset_left = 275.0
+offset_top = 40.0
+offset_right = 420.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.219608, 0.811765, 0.176471, 1)
+theme_override_fonts/font = ExtResource("1_nvjwr")
+theme_override_font_sizes/font_size = 50
+text = "9"
+
+[node name="time_wd" type="Label" parent="Window"]
+anchors_preset = -1
+offset_left = 44.0
+offset_top = 40.0
+offset_right = 420.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.219608, 0.811765, 0.176471, 1)
+theme_override_fonts/font = ExtResource("3_v8prx")
+theme_override_font_sizes/font_size = 70
+text = "fri"
+
+[node name="time_hm" type="Label" parent="Window"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -133.0
+offset_right = 450.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.219608, 0.811765, 0.176471, 1)
+theme_override_fonts/font = ExtResource("1_nvjwr")
+theme_override_font_sizes/font_size = 120
+text = "06:39"
+vertical_alignment = 2
+
+[node name="time_s" type="Label" parent="Window"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -133.0
+offset_right = -20.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.219608, 0.811765, 0.176471, 1)
+theme_override_fonts/font = ExtResource("1_nvjwr")
+theme_override_font_sizes/font_size = 75
+text = "40"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="Window"]
+anchors_preset = -1
+offset_left = 547.0
+offset_top = 13.0
+offset_right = 90.2
+offset_bottom = 44.18
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_v8prx")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_pxclg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kt66w")
+text = "*"
+flat = true
+
+[connection signal="window_input" from="Window" to="Window" method="_on_window_input"]
+[connection signal="pressed" from="Window/Button" to="Window" method="_on_button_pressed"]

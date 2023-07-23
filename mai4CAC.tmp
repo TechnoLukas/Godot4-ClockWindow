@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3q3m3c4yc1og"]
+
+[ext_resource type="FontFile" uid="uid://cws6mgocyqqia" path="res://DSEG7Classic-Bold.ttf" id="1_nvjwr"]
+[ext_resource type="Script" path="res://main.gd" id="1_pgb8q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rou4j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfkto"]
+bg_color = Color(0.631373, 1, 0.643137, 0.364706)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.203922, 0.792157, 0.466667, 1)
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pgb8q")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rou4j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfkto")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.203922, 0.792157, 0.466667, 1)
+theme_override_fonts/font = ExtResource("1_nvjwr")
+theme_override_font_sizes/font_size = 85
+text = "06:39.40"
+horizontal_alignment = 1
+vertical_alignment = 1
